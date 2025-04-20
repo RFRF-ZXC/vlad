@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Игра</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #87CEEB; 
+    }
+    header {
+      background: #ddd;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+    }
+    header div {
+      padding: 5px 10px;
+      border: 1px solid black;
+      cursor: pointer;
+    }
+    main > div {
+      display: none;
+    }
+    .active {
+      display: block;
+    }
+    .block {
+      border: 2px solid black;
+      margin-top: 10px;
+      padding: 20px;
+    }
+    .title {
+      font-size: 32px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div onclick="showPage('about')">Главная страница</div>
+    <div onclick="showPage('game')">Игра</div>
+    <div onclick="showPage('info')">Информация</div>
+  </header>
+
+  <main>
+    <div id="about" class="active">
+      <div class="title">Главная страница</div>
+      <div class="block">
+        <div class="block" style="display: flex; justify-content: center;">
+  	  <p>Итоговый проект Сергиевича Владимира на тему "Создание сайтов".</p>
+	</div>
+
+	<div style="display: flex; justify-content: center;">
+  	  <img src="img1.jpg" alt="Описание">
+	</div>
+
+      </div>
+    </div>
+
+    <div id="game">
+      <div class="title">Футбол для двоих</div>
+      <div class="block">
+        <div class="title"><a href="https://rfrf-zxc.github.io/vlad/football">Играть</a></div>
+	
+      </div>
+    </div>
+
+    <div id="info">
+      <div class="title">Информация</div>
+      <div class="block">
+        <p>Футбол - простая многопользовательская игра, реализованная на JS</p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function showPage(pageId) {
+      document.querySelectorAll('main > div').forEach(div => {
+        div.classList.remove('active');
+      });
+      document.getElementById(pageId).classList.add('active');
+    }
+  </script>
+</body>
+</html>
